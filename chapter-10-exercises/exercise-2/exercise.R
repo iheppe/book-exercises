@@ -35,19 +35,20 @@ salaries$got_raise <- salaries["salary_adjustments"] > 0
 salaries[5, "salary_total"]
 
 # How many employees got a raise?
-length(salaries[salaries$got_raise == TRUE, "got_raise"])
+nrow(salaries[salaries$got_raise == TRUE,])
 
 # What was the dollar value of the highest raise?
-
+salaries[salaries$salary_adjustments == max(salaries$salary_adjustments), "salary_adjustments"]
 
 # What was the "name" of the employee who received the highest raise?
+salaries[salaries$salary_adjustments == max(salaries$salary_adjustments), "employees"]
 
 
 # What was the largest decrease in salaries between the two years?
-
+salaries[salaries$salary_adjustments == min(salaries$salary_adjustments), "salary_adjustments"]
 
 # What was the name of the employee who recieved largest decrease in salary?
-
+salaries[salaries$salary_adjustments == min(salaries$salary_adjustments), "employees"]
 
 # What was the average salary change?
 mean(salaries$salary_adjustments)
