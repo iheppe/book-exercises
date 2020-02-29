@@ -29,9 +29,11 @@ query_param <- list(query = movie_name, api_key = nyt_key)
 endpoint <- "reviews/search.json"
 total_url <- paste0(base_url, endpoint)
 movie_data <- GET(total_url, query = query_param)
+movie_content <- content(movie_data, type = "text")
+movie_json <- fromJSON(movie_content)
 
 # What kind of data structure did this produce? A data frame? A list?
-
+# a list
 
 # Manually inspect the returned data and identify the content of interest 
 # (which are the movie reviews).

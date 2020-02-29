@@ -1,11 +1,15 @@
 # Exercise 1: building a Shiny user interface
 
 # Load the `shiny` package (install it in the R terminal if you haven't already)
-
+library("shiny")
 
 # Define a new `ui` variable. This variable should be assigned a `fluidPage()`
 # layout. The `fluidPage()` layout should be passed the following:
-
+my_ui <- fluidPage(
+  h1("First Shiny Website"),
+  p("I am", strong("excited.")),
+  img(src = "https://media2.giphy.com/media/l3q2Ip7FrmPE33EiI/giphy.gif")
+)
 
   # A first-level header (`h1()`) with the content "First Shiny Website"
 
